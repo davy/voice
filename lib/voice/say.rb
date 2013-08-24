@@ -38,6 +38,6 @@ module Say
       text.gsub!(key, " #{DICT[key]} ")
     end
   
-    system "#{DEFAULT_SAY} #{"-v #{opts[:voice]}" if opts[:voice]} '#{text}'" 
+    system "#{DEFAULT_SAY} #{"-v '#{opts[:voice]}'" if opts[:voice]} '#{text}'" 
   end
 end
