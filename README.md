@@ -22,4 +22,8 @@ To use Voice, simply call say. You can use the default voice, specify a voice, a
     Voice.say('hello world', :random => true)
     Voice.say('hello world', :random => true, :novelty => 'include')
     Voice.say('hello world', :random => true, :novelty => 'only')
-    
+
+
+== OTHER OPERATING SYSTEMS
+
+This hasn't been tested at all on Windows or other Linux distros, where it is expected to not be functional. The hope is that it gracefully errors, if not please let me know.
