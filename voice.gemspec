@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'voice'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2013-08-23'
   s.summary     = 'Gives you a voice'
   s.description = "Provides access to OSX say command and custom voices"
