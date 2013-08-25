@@ -8,7 +8,7 @@ module Voice
 
   NOVELTY_VOICES = ["Albert", "Bad News", "Bahh", "Bells",
     "Boing", "Bubbles", "Cellos", "Deranged", "Good News",
-    "Hysterical", "Pipe Organ", "Trinoides", "Whisper", "Zarvox"
+    "Hysterical", "Pipe Organ", "Trinoids", "Whisper", "Zarvox"
   ]
 
   if PLATFORM_IS_OSX
