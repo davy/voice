@@ -41,7 +41,7 @@ module Voice
   def self.get_rand(opts={})
     return nil if @@all.nil?
     opts = {} unless opts.is_a?(Hash)
-    
+
     voices = self.all(opts)
 
     voices[rand(voices.size)]
@@ -50,7 +50,7 @@ module Voice
   def self.say(text, opts={})
     opts = {} unless opts.is_a?(Hash)
     opts[:voice] = self.get_rand(opts) if opts[:random]
-    opts[:voice] ||= self.default 
+    opts[:voice] ||= self.default
 
     Say.say(text, opts)
     return nil
