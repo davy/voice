@@ -24,6 +24,15 @@ To use Voice, simply call say. You can use the default voice, specify a voice, a
     Voice.say('hello world', :random => true, :novelty => 'only')
 
 
+Use the Say module to access the say command directly. Voice passes the options hash down to Say.
+
+
+    Say.say('hello')
+    Say.say('hello! =D')
+    Say.say('hello! =D', :voice => 'Samantha')
+    Say.say('hello! =D', :no_emoticons => true)
+
+
 OTHER OPERATING SYSTEMS
 -----------------------
 
