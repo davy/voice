@@ -11,15 +11,24 @@ module Voice
     "Hysterical", "Pipe Organ", "Trinoids", "Whisper", "Zarvox"
   ]
 
-  if PLATFORM_IS_OSX
-    @@all = []
-    `say -v ?`.each_line do |l|
-      # Each line resembles: Agnes               en_US    # Isn't it nice to have a computer that will talk to you?
-      voice = l.split('#')[0]. # Grab everything before the comment marker
-        strip.         # Drop the extra spaces at the end
-        split(' ')     # Split into words
-      @@all << voice[0..-2].join(' ') # Drop the last word (locale), and join the rest with a single space
+
+  class << self
+    def detect_voices
+      voices = []
+      `say -v ?`.each_line do |l|
+        # Each line resembles: Agnes               en_US    # Isn't it nice to have a computer that will talk to you?
+        voice = l.split('#')[0]. # Grab everything before the comment marker
+          strip.         # Drop the extra spaces at the end
+          split(' ')     # Split into words
+        voices << voice[0..-2].join(' ') # Drop the last word (locale), and join the rest with a single space
+      end
+      return voices
     end
+    protected :detect_voices
+  end
+
+  if PLATFORM_IS_OSX
+    @@all = Voice.detect_voices
     @@novelty = @@all.select{|v| NOVELTY_VOICES.include?(v)}
     @@all = @@all - @@novelty
   else
