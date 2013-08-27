@@ -2,7 +2,10 @@ require 'voice/say'
 
 module Voice
 
-  PLATFORM_IS_OSX = (Object::RUBY_PLATFORM =~ /darwin/i)
+  PLATFORM_IS_OSX = (
+    Object::RUBY_PLATFORM =~ /darwin/i ||
+    Object::RUBY_PLATFORM =~ /java/i    # thanks jruby
+  )
 
   DEFAULT_VOICE = 'Kathy'
 
@@ -50,6 +53,7 @@ module Voice
   end
 
   def self.default
+    return nil if @@all.nil?
     return DEFAULT_VOICE if @@all.include?(DEFAULT_VOICE)
     return @@all.first
   end

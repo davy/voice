@@ -50,8 +50,6 @@ module Say
     '=/' => 'meh face',
     ':/' => 'meh face',
     ':|' => 'no expression face',
-    'ಠ_ಠ' => 'look of disapproval',
-    '(╯°□°）╯︵ ┻━┻' => 'table flip',
     '\o/' => 'yay',
     'o/\o' => 'high five',
     '*\o/*' => 'cheerleader',
